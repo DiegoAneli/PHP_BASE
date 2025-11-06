@@ -12,14 +12,12 @@
 
 
     <form action="" method="get">
-
         Inserisci una parola : <input type="text" name="parola">
 
         <input type="submit" value="verifica">
-
-
-
     </form>
+
+
 
 
     <?php

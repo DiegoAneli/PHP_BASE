@@ -11,10 +11,11 @@
         if( $parola == $parolaInvertita ){
 
             echo "<p>La parola $parola è palindroma </p>";
+
         }else {
 
-
             echo "<p>La parola $parola non è palindroma</p>";
+            
         }
 
     }
