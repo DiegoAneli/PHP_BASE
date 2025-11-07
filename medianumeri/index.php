@@ -1,6 +1,7 @@
 <?php
 
-    if(isset($_POST['n1'], $_POST['n2'],$_POST['n3'] )){
+    //isset -> controllo se il valore inserito diverso da "null" quindi deve essere presente
+    if(isset($_POST['n1'], $_POST['n2'],$_POST['n3'] )){ //se esistono 
 
         $n1 = (float) $_POST['n1'];
         $n2 = (float) $_POST['n2'];

@@ -10,7 +10,7 @@
     //float -> numero decimale
     //bool -> booleano (vero o falso)
 
-    /* Dichiarazione di una variabile :  con $  */
+    /* Dichiarazione di una variabile(in questo caso array) :  con $  */
     $nome = ['pippo','paperino'];
 
     //stampa a schermo qualcosa : echo mostra il valore
@@ -162,17 +162,21 @@
 
 <?php
 
+    //dichiarazione funzione
+    function saluta($x){
 
-    function saluta($nome){
 
-
-        return "Ciao, $nome";
+        return "Ciao, $x";
 
     }
 
+    //richiamo : quindi utilizzo della funzione
     echo saluta("diego");
     echo saluta("marco");
 
 
 
 ?>
+
+
+

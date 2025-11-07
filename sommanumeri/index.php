@@ -7,7 +7,6 @@
     $somma = 0;
 
     //ciclo l array di numeri e per ogni iterazione di "$i" aggijngo il valore a somma
-
     foreach($numeri as $num){
 
         $somma += $num;
