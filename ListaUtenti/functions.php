@@ -8,7 +8,7 @@
 
         //devo creare un oggetto contatto che si aggiunge all array rubrica
         $rubrica[] = new Contact($name, $phone);
-
+        
 
     }
 

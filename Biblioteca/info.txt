@@ -5,13 +5,57 @@ Creare un applicazione formata da
     -footer
     -function   -> addBook() , printBook(), searchBook()    se proprio tutto funziona -> deleteBook()
     -index
-    -Book ( classe )
+    -Book(classe)
     -style.css 
     -bootstrap con cdn
     -repo su github
     -inizializzate con git
 
-    -salvataggio  sessione in coockies 
+    -salvataggio sessione in coockies 
+
+Classe:
+Book :  titolo, 
+        autore, 
+        anno, 
+        prezzo, 
+        numero pagine
 
 
-Book : titolo, autore , anno, prezzo, numero pagine
+
+
+
+
+
+
+
+
+
+
+////////////////////////////////////////////////////////////////////////////////////
+
+
+//FRONTEND
+vscode -> github -> vercel -> COMPRARE IL DOMINIO VOSTRO ES. SU KELIWEB E 
+                              CAPIRE COME CONFIGURARE IL DOMINIO IN VERCEL 
+                              NELLA CONFIGURAZIONE DEI DNS 
+
+
+
+
+//BACKEND FRONTEND 
+vscode -> github -> database?
+
+
+
+
+// Sviluppo mobile
+
+IOS PLAYSTORE                       Android PLAYSTORE
+ambiente xcode                      ambiente android su pc
+in swift                            JAVA/KOTLIN
+
+
+
+                    cross platform
+                    FLUTTER in DART
+
