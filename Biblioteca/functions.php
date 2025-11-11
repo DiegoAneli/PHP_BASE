@@ -30,11 +30,17 @@
     }
 
 
-    
-    
-    function deleteBook(){
 
+    
+    function deleteBook(array &$library, int $index){
 
+        if(isset($library[$index])){ //se ho un indice
+
+            unset($library[$index]);  //cancello l indice
+
+            $library = array_values($library); // reindicizza la lista
+
+        }
 
     }
 

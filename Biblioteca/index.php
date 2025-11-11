@@ -44,11 +44,7 @@
     }
 
 
-
-
-
     //LOGICA DI RICERCA LIBRO
-
     //inizializzo il libro da cercare come nullo
     $searchTitle = null;
     $searchResult = null;
@@ -65,8 +61,15 @@
     }
 
 
+    //LOGICA DI CANCELLAZIONE
 
+    if($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['delete'])){ //mi sono preso il bottone di search button book
 
+        $indexToDelete = (int)$_POST['index']; // ho preso l id del book da cancellare
+
+       deleteBook($library, $indexToDelete);
+       $message = "Libro cancellato";
+    }
 
 
 
@@ -207,8 +210,8 @@
                         <li class="list-group-item d-flex justify-content-between align-items-center">
                             <?= $book->getInfo() ?><!--prendo tutte le info con la funzione della classe-->
                             <!--Form di eliminazione libro-->
-                            <form action="" method="POST">
-                               
+                            <form action="" method="POST" onsubmit="return confirm('Sei sicuro di voler eliminare questo libro?')">
+                                <input type="hidden" name="index" value="<?php $index ?>">
                                 <button type="submit" name="delete" class="btn btn-danger">Cancella</button>
                             </form>
                         </li>
