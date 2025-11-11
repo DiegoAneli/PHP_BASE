@@ -13,15 +13,24 @@
     }
 
 
-    
-    function searchBook(){
 
+    function searchBook(array $library, string $title): ?Book {
 
+            foreach ($library as $book){
+
+                if(strtolower($book->title) === strtolower($title)){
+
+                    return $book;
+                }
+
+            }
+
+            return null; // nessun contatto trovato
 
     }
 
 
-
+    
     
     function deleteBook(){
 

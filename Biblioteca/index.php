@@ -18,7 +18,7 @@
     $messagge = null;
 
 
-    //aggiungo un libro
+    //LOGICA AGGIUNTA LIBRO
     if($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['add'])){ //mi sono preso il bottone di add book
 
         //Salvo in variabili i valori inseriti in input form
@@ -45,6 +45,24 @@
 
 
 
+
+
+    //LOGICA DI RICERCA LIBRO
+
+    //inizializzo il libro da cercare come nullo
+    $searchTitle = null;
+    $searchResult = null;
+
+    if($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['search'])){ //mi sono preso il bottone di search button book
+
+        $searchTitle = trim($_POST['search_title'] ?? ''); // il valore inserito sarà salvato in searchTitle
+
+        if($searchTitle !== ''){ // se ho valori
+
+            $searchResult = searchBook($library, $searchTitle);
+        }
+       
+    }
 
 
 
@@ -82,6 +100,7 @@
 
     <div class="container py-4">
 
+        <!--FORM AGGIUNTA LIBRO-->
         <h3>Aggiungi un libro</h3>
         <form action="" method="POST" class="row g-3 mb-4">
 
@@ -129,7 +148,7 @@
         </form>
 
 
-
+        <!--FORM RICERCA LIBRO-->
         <h3>Ricerca Libro</h3>
         <form action="" method="POST">
 
@@ -145,7 +164,32 @@
         </form>
 
 
-        <h3>Risultato Ricerca</h3>
+
+
+        <!--CREO I RISULTATI DELLA RICERCA PER TITOLO-->
+        
+        <?php  if($searchTitle !== null) :  ?> <!-- se sto effettivamente cercando qualcosa -->
+
+            <h3>Risultato Ricerca</h3>
+            <?php if($searchResult) : ?>
+                
+                <div class="card">
+
+                    <div class="card-body d-flex justify-content-between align-items-center">
+
+                        <?= $searchResult->getInfo() ?>
+
+                    </div>
+
+                </div>
+            <?php else: ?>
+                <p>Nessun libro trovato</p>
+
+            <?php endif; ?>
+
+        <?php endif; ?>
+
+
 
 
         <h3>Elenco Libri</h3>
@@ -156,13 +200,17 @@
         
             <?php else: ?>
 
-                <ul>
+                <ul class="list-group mb-4">
                     <!--Ciclo su tutti i libri -->
                     <?php  foreach($library as $index => $book) :   ?>
-
-                        <li>
-                            <?= $book->getInfo() ?>
-
+                    <!--Creo elemento in pagina del libro-->
+                        <li class="list-group-item d-flex justify-content-between align-items-center">
+                            <?= $book->getInfo() ?><!--prendo tutte le info con la funzione della classe-->
+                            <!--Form di eliminazione libro-->
+                            <form action="" method="POST">
+                               
+                                <button type="submit" name="delete" class="btn btn-danger">Cancella</button>
+                            </form>
                         </li>
                     <?php endforeach; ?>
                 </ul>
