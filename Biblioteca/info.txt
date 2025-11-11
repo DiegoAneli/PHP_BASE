@@ -5,11 +5,11 @@ Creare un applicazione formata da
     -footer
     -function   -> addBook() , printBook(), searchBook()    se proprio tutto funziona -> deleteBook() e editBook()
     -index
-    -Book(classe)
+    // -Book(classe)
     -style.css 
     -bootstrap con cdn
-    -repo su github
-    -inizializzate con git
+    // -repo su github
+    // -inizializzate con git
     -salvataggio sessione in coockies 
 
     
