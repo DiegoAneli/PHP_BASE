@@ -1,0 +1,23 @@
+body{
+
+    background-color: coral;
+}
+
+
+h1 {
+
+    color: whitesmoke;
+}
+
+h3{
+
+    text-align: center;
+    color: #333;
+}
+
+
+footer p {
+
+    margin-top: 20px;
+    color: whitesmoke;
+}

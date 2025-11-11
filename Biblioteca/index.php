@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="it"> <!--BUG?! Altrimenti non prende il css personale -->
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -15,41 +15,41 @@
     <?php include 'header.php' ?>
 
 
-    
+
     <div class="container py-4">
 
         <h3>Aggiungi un libro</h3>
         <form action="" method="POST" class="row g-3 mb-4">
 
-            <div class="col-md-5">
+            <div class="col-md-4">
 
                 <input type="text" name="title" class="form-control" placeholder="Inserisci Titolo...">
 
 
             </div>
 
-            <div class="col-md-5">
+            <div class="col-md-4">
 
                 <input type="text" name="author" class="form-control" placeholder="Inserisci Autore...">
 
 
             </div>
 
-            <div class="col-md-5">
+            <div class="col-md-4">
 
                 <input type="text" name="year" class="form-control" placeholder="Inserisci Anno...">
 
 
             </div>
 
-            <div class="col-md-5">
+            <div class="col-md-6">
 
                 <input type="text" name="price" class="form-control" placeholder="Inserisci Prezzo Libro...">
 
 
             </div>
 
-            <div class="col-md-5">
+            <div class="col-md-6">
 
                 <input type="text" name="pages" class="form-control" placeholder="Inserisci Numero delle pagine...">
 
@@ -69,7 +69,7 @@
         <h3>Ricerca Libro</h3>
         <form action="" method="POST">
 
-            <div class="col-md-10">
+            <div class="col-md-12">
                 <input type="text" name="search_title" class="form-control" placeholder="Inserisci titolo da cercare">
             </div>
 
