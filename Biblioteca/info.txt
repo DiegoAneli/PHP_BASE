@@ -22,9 +22,10 @@ Book :  titolo,
         anno,
         prezzo,
         numero pagine
+
+
+
         immagine url stringa
-
-
         immagine da verificare .blob
         -chart.js -> prezzo-titolo / autore-num pagine
 
