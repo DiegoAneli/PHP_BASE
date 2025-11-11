@@ -14,6 +14,8 @@
     <!--importo header-->
     <?php include 'header.php' ?>
 
+
+    
     <div class="container py-4">
 
         <h3>Aggiungi un libro</h3>
@@ -83,23 +85,6 @@
 
 
     </div>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
     <!--importo footer-->
