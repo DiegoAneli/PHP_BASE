@@ -1,3 +1,67 @@
+<?php
+
+
+    require_once 'functions.php';
+
+    //parte la sessione
+    session_start();
+
+    //inizializzazione della sessione
+    if(!isset($_SESSION['library'])){
+        $_SESSION['library'] = [];
+    }
+
+    //dichiaro che 
+    $library = &$_SESSION['library']; // puntatore di riferimento variabile sessione con &
+
+    //messaggi informativi ( inizializzo a null poi cambia a seconda di cio' che voglio avere come info)
+    $messagge = null;
+
+
+    //aggiungo un libro
+    if($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['add'])){ //mi sono preso il bottone di add book
+
+        //Salvo in variabili i valori inseriti in input form
+        $title = trim($_POST['title'] ?? ''); //?? valore di dafalt, quindi prendi il titolo oppure vuoto
+        $author = trim($_POST['author'] ?? '');
+        $year = trim($_POST['year'] ?? '');
+        $price = trim($_POST['price'] ?? '');
+        $pages = trim($_POST['pages'] ?? '');
+
+        //aggiungo un libro se ho il titolo e l autore
+        if($title && $author){
+
+            addBook($library, $title, $author, $year, $price, $pages);
+
+            $message = "Libro Aggiunto";
+
+        }else{
+
+            $message = "Inserisci il titolo e un autore";
+        }
+
+
+    }
+
+
+
+
+
+
+
+
+
+
+?>
+
+
+
+
+
+
+
+
+
 <!DOCTYPE html>
 <html lang="it"> <!--BUG?! Altrimenti non prende il css personale -->
 <head>
@@ -58,7 +122,7 @@
             
             <!--Bottone d submit-->
             <div class="col-md-2 ">
-                <button class="btn btn-primary w-100 " type="submit" name="add">Aggiungi</button>
+                <button class="btn btn-primary w-100" type="submit" name="add">Aggiungi</button>
             </div>
 
 
@@ -84,7 +148,31 @@
         <h3>Risultato Ricerca</h3>
 
 
+        <h3>Elenco Libri</h3>
+        <!--Se la libreria è vuota...-->
+        <?php if(empty($library)): ?>
+            
+            <p>Nessun libro presente</p>
+        
+            <?php else: ?>
+
+                <ul>
+                    <!--Ciclo su tutti i libri -->
+                    <?php  foreach($library as $index => $book) :   ?>
+
+                        <li>
+                            <?= $book->getInfo() ?>
+
+                        </li>
+                    <?php endforeach; ?>
+                </ul>
+
+        <?php endif; ?>
     </div>
+
+    <h3>debug</h3>
+    <pre><?php print_r($_SESSION) ?></pre>
+
 
 
     <!--importo footer-->
